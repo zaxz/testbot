@@ -410,7 +410,7 @@ Saya ${botname} Yang Siap Membantu Anda Dalam Kinerja Whatsapp 😉
 ├ Nomor Owner : ${owner.split('@')[0]}
 ├ Runtime : ${runtime(process.uptime())}
 ├ Language : Javascript & Nodejs
-├ Totan Pengguna : ${pendaftar.length}
+├ Total Pengguna : ${pendaftar.length}
 ├ Speed : ${latensi.toFixed(4)} second
 └❏
 ╭─❒ 「 Developer Info 」 ❒
@@ -469,6 +469,7 @@ Saya ${botname} Yang Siap Membantu Anda Dalam Kinerja Whatsapp 😉
 
 ╭─⬣「 Download Menu 」⬣
 │ 🌸 ${prefix}tiktok ( Link )
+│ 🌸 ${prefix}ytmp4 ( Link )
 └⬣
 
 ╭─⬣「 Gabut Menu 」⬣
