@@ -816,18 +816,6 @@ break
 
 //━━━━━━━━━━━━━━━[ IG DOWNLOAD ]━━━━━━━━━━━━━━━━━//
 
-  case 'ig':
-case 'igdl':
-case 'instagram':
-if (!c) return reply('Linknya?')
-reply(mess.wait)
-var { igDownloader } = require('./lib/igdown')
-   res = await igDownloader(`${c}`).catch(e => {
-reply(mess.error.api)
-})
-console.log(res)
-sendMediaURL(from,`${res.result.link}`,`${res.result.desc}`)
-break
 
 //━━━━━━━━━━━━━━━[ GABUT MENU ]━━━━━━━━━━━━━━━━━//
 
