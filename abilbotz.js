@@ -814,23 +814,20 @@ abilbotz.sendMessage('status@broadcast', buffer, MessageType.image, {quoted: mek
 reply(`Sukses upload image:\n${teksyy}`)
 break
 
-//━━━━━━━━━━━━━━━[ TIKTOK DOWNLOAD ]━━━━━━━━━━━━━━━━━//
+//━━━━━━━━━━━━━━━[ IG DOWNLOAD ]━━━━━━━━━━━━━━━━━//
 
-                    case 'tiktok':
- 		if (!isUrl(args[0]) && !args[0].includes('tiktok.com')) return reply(mess.Iv)
- 		if (!q) return fakegroup('Linknya?')
- 		reply(mess.wait)
-		hx.ttdownloader(`${args[0]}`)
-    		.then(result => {
-    		const { wm, nowm, audio } = result
-    		axios.get(`https://tinyurl.com/api-create.php?url=${nowm}`)
-    		.then(async (a) => {
-    		me = `*Link* : ${a.data}`
-		abilbotz.sendMessage(from,{url:`${nowm}`},video,{mimetype:'video/mp4',quoted:mek,caption:me})
-		})
-		})
-     		.catch(e => console.log(e))
-     		break
+  case 'ig':
+case 'igdl':
+case 'instagram':
+if (!c) return reply('Linknya?')
+reply(mess.wait)
+var { igDownloader } = require('./lib/igdown')
+   res = await igDownloader(`${c}`).catch(e => {
+reply(mess.error.api)
+})
+console.log(res)
+sendMediaURL(from,`${res.result.link}`,`${res.result.desc}`)
+break
 
 //━━━━━━━━━━━━━━━[ GABUT MENU ]━━━━━━━━━━━━━━━━━//
 
