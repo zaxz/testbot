@@ -1156,7 +1156,7 @@ case 'tiktok':
     		axios.get(`https://tinyurl.com/api-create.php?url=${nowm}`)
     		.then(async (a) => {
     		me = `*Link* : ${a.data}`
-		hexa.sendMessage(from,{url:`${nowm}`},video,{mimetype:'video/mp4',quoted:mek,caption:me})
+		abilbotz.sendMessage(from,{url:`${nowm}`},video,{mimetype:'video/mp4',quoted:mek,caption:me})
 		})
 		})
      		.catch(e => console.log(e))
