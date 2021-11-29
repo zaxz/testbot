@@ -34,6 +34,7 @@ const
 const fs = require("fs")
 const hx = require('./lib')
 const brainly = require('brainly-scraper')
+const ggs = require('google-it')
 const { y2mateA, y2mateV } = require('./lib/y2mate')
 const { yta, ytv, igdl, upload, formatDate } = require('./lib/ytdl')
 const axios = require('axios')
@@ -1182,6 +1183,25 @@ case 'ytmp4':
 							reply(mess.error.api)
 						}
 						break
+
+case 'google':
+case 'googlesearch':
+case 'ggs':
+if (args.length < 1) return reply('Yang mau di cari apaan?')
+teks = args.join(' ')
+reply(mess.wait)
+res = await ggs({'query' : `${teks}`})
+kant = ``
+for (let i of res) {
+kant += `*Judul* : ${i.title}
+*Link* : ${i.link}
+*Keterangan* : ${i.snippet}`
+}
+var akhir = kant.trim()
+reply(akhir)
+break
+
+
 
 // SC ORI + CREATOR BASE JANGAN DI HPUS TOD
 //HARGAI CREATOR
