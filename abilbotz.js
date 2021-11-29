@@ -34,7 +34,6 @@ const
 const fs = require("fs")
 const hx = require('./lib')
 const brainly = require('brainly-scraper')
-const ggs = require('google-it')
 const { y2mateA, y2mateV } = require('./lib/y2mate')
 const { yta, ytv, igdl, upload, formatDate } = require('./lib/ytdl')
 const axios = require('axios')
