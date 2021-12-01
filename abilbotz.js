@@ -446,7 +446,6 @@ Saya ${botname} Yang Siap Membantu Anda Dalam Kinerja Whatsapp 😉
 └──⬣
 
 ╭─⬣「 Group Menu 」⬣
-│ 🌸 ${prefix}welcome ( Button )
 │ 🌸 ${prefix}antilink ( Button )
 │ 🌸 ${prefix}antivirtex ( Button )
 │ 🌸 ${prefix}group ( Only Admin )
@@ -473,6 +472,7 @@ Saya ${botname} Yang Siap Membantu Anda Dalam Kinerja Whatsapp 😉
 └⬣
 
 ╭─⬣「 Gabut Menu 」⬣
+│ 🌸 ${prefix}desah
 │ 🌸 ${prefix}apakah ( Pertanyaan )
 │ 🌸 ${prefix}cekganteng ( Nama )
 │ 🌸 ${prefix}cekcantik ( Nama )
@@ -841,7 +841,9 @@ abilbotz.sendMessage(from, '*Pertanyaan :* '+cantik+'\n*Jawaban :* '+ tik+'%', t
 break
 
 case 'hobby':
-const kan =['Coli','baca manga hentai','ngeliat org mandi','Nonton bokep','sepedaan','Baca wattpad','belajar','Main discord','menabung','maling']
+case 'hobi':
+case 'hoby':
+const kan =['Coli','baca manga hentai','ngeliat org mandi','Nonton bokep','sepedaan','belajar','ngegay','Main discord','menabung','maling']
 const hooo = kan[Math.floor(Math.random() * kan.length)]
 abilbotz.sendMessage(from, 'Pertanyaan : *hoby*\n\nJawaban : '+ hooo, text, { quoted: ftrol })
 break
@@ -881,8 +883,8 @@ case 'jadian':
               break
 
 //━━━━━━━━━━━━━━━[ SOUND MENU BY ABIL BOTZ ]━━━━━━━━━━━━━━━━━//
-case 'sound1':
-sound = fs.readFileSync('Audio/dj1.mp3')
+case 'desah':
+sound = fs.readFileSync('Audio/desah.mp3')
 abilbotz.sendMessage(from, sound, MessageType.audio, {quoted: ftrol, mimetype: 'audio/mp4', ptt:true})
 break
 case 'sound2':
