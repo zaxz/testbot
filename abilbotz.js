@@ -41,6 +41,7 @@ const speed = require("performance-now")
 const util = require('util')
 const crypto = require('crypto')
 const request = require('request')
+const { fetchJson } = require('./lib/fetcher1')
 const { exec, spawn } = require('child_process')
 const fetch = require('node-fetch')
 const moment = require('moment-timezone')
@@ -1201,6 +1202,12 @@ kant += `*Judul* : ${i.title}
 var akhir = kant.trim()
 reply(akhir)
 break
+
+case 'pantun':
+				anu = await fetchJson(`https://bx-hunter.herokuapp.com/api/pantun?apikey=${HunterApi}`, {method: 'get'})
+				kata = anu.result
+				reply(kata)
+				break
 
 
 
