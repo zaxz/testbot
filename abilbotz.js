@@ -1204,12 +1204,25 @@ var akhir = kant.trim()
 reply(akhir)
 break
 
-case 'pantun':
-				anu = await fetchJson(`https://bx-hunter.herokuapp.com/api/pantun?apikey=${HunterApi}`, {method: 'get'})
-				kata = anu.result
-				reply(kata)
-				break
-
+case 'play':
+                            if (args.length === 0) return reply(`Kirim perintah *${prefix}play* _Judul lagu yang akan dicari_`)
+                            const playy = await axios.get(`https://bx-hunter.herokuapp.com/api/yt/search?query=${body.slice(6)}&apikey=${HunterApi}`)
+                            const mulaikah = playy.data.result[0].url
+                            try {
+                                reply(mess.wait)
+                                yta(mulaikah)
+                                .then((res) => {
+                                    const { dl_link, thumb, title, filesizeF, filesize } = res
+                                    axios.get(`https://tinyurl.com/api-create.php?url=${dl_link}`)
+                                    .then(async (a) => {
+                                    if (Number(filesize) >= 30000) return sendMediaURL(from, thumb, `❏ *PLAYmp3*\n\n❏ *Title* : ${title}\n❏ *Ext* : MP3\n*Filesize* : ${filesizeF}\n*Link* : ${a.data}\n\n_Maaf durasi melebihi batas maksimal, Silahkan klik link diatas_`)
+                                    sendFileFromUrl(dl_link, document, {mimetype: 'audio/mp3', filename: `${title}.mp3`, quoted: mek, contextInfo: { forwardingScore: 508, isForwarded: true, externalAdReply:{title:title,body:"",mediaType:"2",thumbnail:getBuffer(thumb),mediaUrl:"https://youtu.be/Ejl9sLbgc1A"}}}).catch(() => reply(mess.error.api))
+                                    })
+                                })
+                            } catch (err) {
+                                reply(mess.error.api)
+                            }
+                            break
 
 
 // SC ORI + CREATOR BASE JANGAN DI HPUS TOD
