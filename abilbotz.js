@@ -62,6 +62,7 @@ developer = setting.DeveloperNumber
 botname = setting.BotName
 abilkey = setting.AbilKey
 ownername = setting.OwnerName
+HunterApi = settings.HunterApi
 
 //━━━━━━━━━━━━━━━[ MODUL EXPORTS ]━━━━━━━━━━━━━━━━━//
 
@@ -1204,7 +1205,7 @@ reply(akhir)
 break
 
 case 'pantun':
-				anu = await fetchJson(`https://bx-hunter.herokuapp.com/api/pantun?apikey=${abilkey}`, {method: 'get'})
+				anu = await fetchJson(`https://bx-hunter.herokuapp.com/api/pantun?apikey=${HunterApi}`, {method: 'get'})
 				kata = anu.result
 				reply(kata)
 				break
