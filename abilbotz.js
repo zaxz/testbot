@@ -62,7 +62,7 @@ developer = setting.DeveloperNumber
 botname = setting.BotName
 abilkey = setting.AbilKey
 ownername = setting.OwnerName
-HunterApi = settings.HunterApi
+HunterApi = setting.HunterApi
 
 //━━━━━━━━━━━━━━━[ MODUL EXPORTS ]━━━━━━━━━━━━━━━━━//
 
