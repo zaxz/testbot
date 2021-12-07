@@ -475,6 +475,7 @@ Saya ${botname} Yang Siap Membantu Anda Dalam Kinerja Whatsapp 😉
 
 ╭─⬣「 Gabut Menu 」⬣
 │ 🌸 ${prefix}desah
+│ 🌸 ${prefix}suit ( Kertas/Batu/Gunting )
 │ 🌸 ${prefix}apakah ( Pertanyaan )
 │ 🌸 ${prefix}cekganteng ( Nama )
 │ 🌸 ${prefix}cekcantik ( Nama )
@@ -883,6 +884,37 @@ case 'jadian':
               jds.push(diaa.jid)
               mentions(teks, jds, true)
               break
+
+case 'suit':
+  if (args.length < 1) return reply('Pilih gunting/batu/kertas')
+					if (args[0] === 'gunting' ) {
+					  gunting = [
+					    "Kamu *Gunting*\nAku *Kertas*\nKamu Menang 😔",
+					    "Kamu *Gunting*\nAku *Batu*\nKamu Kalah 🙂",
+					    "Kamu *Gunting*\nAku *Gunting*\nKita Seri 😏"
+					    ]
+					  gun = gunting[Math.floor(Math.random() * gunting.length)]
+					  reply(gun)
+					} else if (args[0] === 'kertas') {
+					  ker = [
+					    "Kamu *Kertas*\nAku *Batu*\nKamu Menang 😔",
+					    "Kamu *Kertas*\nAku *Gunting*\nKamu Kalah 🙂",
+					    "Kamu *Kertas*\nAku *Kertas*\nKita Seri 😏"
+					    ]
+					  kertas = ker[Math.floor(Math.random() * ker.length)]
+						reply(kertas)
+					} else if (args[0] === 'batu') {
+					  bat = [
+					    "Kamu *Batu*\nAku *Gunting*\nKamu Menang ??",
+					    "Kamu *Batu*\nAku *Kertas*\nKamu Kalah 🙂",
+					    "Kamu *Batu*\nAku *Batu*\nKita Seri 😏"
+					    ]
+					  batu = bat[Math.floor(Math.random() * bat.length)]
+					  reply(batu)
+					} else {
+					  reply('Pilih gunting/batu/kertas')
+					}
+break
 
 //━━━━━━━━━━━━━━━[ SOUND MENU BY ABIL BOTZ ]━━━━━━━━━━━━━━━━━//
 case 'desah':
