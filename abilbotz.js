@@ -471,6 +471,7 @@ Saya ${botname} Yang Siap Membantu Anda Dalam Kinerja Whatsapp 😉
 ╭─⬣「 Download Menu 」⬣
 │ 🌸 ${prefix}tiktok ( Link )
 │ 🌸 ${prefix}ytmp4 ( Link )
+│ 🌸 ${prefix}ytmp3 ( Link )
 └⬣
 
 ╭─⬣「 Gabut Menu 」⬣
@@ -1212,6 +1213,26 @@ case 'ytmp4':
 								.then((a) => {
 								if (Number(filesize) >= 40000) return sendMediaURL(from, thumb, `â¬£ *YTmp4*\n\nâ¬£ *Title* : ${title}\nâ¬£ *Ext* : MP3\n*Filesize* : ${filesizeF}\n*Link* : ${a.data}\n\n_Maaf durasi melebihi batas maksimal, Silahkan klik link diatas_`)
 								sendFileFromUrl(dl_link, document, {mimetype: 'video/mp4', filename: `${title}.mp4`, quoted: mek, contextInfo: { forwardingScore: 508, isForwarded: true, externalAdReply:{title:title,body:"",mediaType:"2",thumbnail:getBuffer(thumb),mediaUrl:`${body.slice(7)}`}}}).catch(() => reply(mess.error.api))
+							})
+							})
+						} catch (err) {
+							reply(mess.error.api)
+						}
+						break
+
+case 'ytmp3':
+						if (args.length === 0) return reply(`Kirim perintah *${prefix}ytmp3 [linkYt]*`)
+						let isLinks3 = args[0].match(/(?:https?:\/{2})?(?:w{3}\.)?youtu(?:be)?\.(?:com|be)(?:\/watch\?v=|\/)([^\s&]+)/)
+						if (!isLinks3) return reply(mess.error.Iv)
+						try {
+							reply(mess.wait)
+							yta(args[0])
+							.then((res) => {
+								const { dl_link, thumb, title, filesizeF, filesize } = res
+								axios.get(`https://tinyurl.com/api-create.php?url=${dl_link}`)
+								.then((a) => {
+								if (Number(filesize) >= 40000) return sendMediaURL(from, thumb, `â¬£ *YTmp4*\n\nâ¬£ *Title* : ${title}\nâ¬£ *Ext* : MP3\n*Filesize* : ${filesizeF}\n*Link* : ${a.data}\n\n_Maaf durasi melebihi batas maksimal, Silahkan klik link diatas_`)
+								sendFileFromUrl(dl_link, document, {mimetype: 'audio/mp3', filename: `${title}.mp3`, quoted: mek, contextInfo: { forwardingScore: 508, isForwarded: true, externalAdReply:{title:title,body:"",mediaType:"2",thumbnail:getBuffer(thumb),mediaUrl:`${body.slice(7)}`}}}).catch(() => reply(mess.error.api))
 							})
 							})
 						} catch (err) {
