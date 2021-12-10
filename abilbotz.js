@@ -476,6 +476,7 @@ Saya ${botname} Yang Siap Membantu Anda Dalam Kinerja Whatsapp 😉
 
 ╭─⬣「 Gabut Menu 」⬣
 │ 🌸 ${prefix}desah
+│ 🌸 ${prefix}farmingpahala
 │ 🌸 ${prefix}suit ( Kertas/Batu/Gunting )
 │ 🌸 ${prefix}apakah ( Pertanyaan )
 │ 🌸 ${prefix}cekganteng ( Nama )
@@ -915,6 +916,10 @@ case 'suit':
 					} else {
 					  reply('Pilih gunting/batu/kertas')
 					}
+break
+
+case 'farmingpahala':
+reply (`Hai Kak ${pushname}, bacalah Istighfar dimanapun dan kapanpun\n\n*Astaghfirullah hal'adzim, aladzi laailaha illahuwal khayyul qoyyuumu wa atuubu ilaiih*\n\nSelamat anda telah mendapatkan pahala😊`)
 break
 
 //━━━━━━━━━━━━━━━[ SOUND MENU BY ABIL BOTZ ]━━━━━━━━━━━━━━━━━//
