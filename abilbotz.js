@@ -459,7 +459,6 @@ Saya ${botname} Yang Siap Membantu Anda Dalam Kinerja Whatsapp 😉
 │ 🌸 ${prefix}setpp ( Reply Image )
 │ 🌸 ${prefix}setdesc ( Desk )
 │ 🌸 ${prefix}setname ( Name )
-│ 🌸 ${prefix}hidetag ( Text )
 │ 🌸 ${prefix}infobot
 └⬣
 
