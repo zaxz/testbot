@@ -70,7 +70,7 @@ abilbotz.on("group-participants-update", async (anu) => {
           "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png?q=60"
       }
       if (anu.action == "add" && mem.includes(abilbotz.user.jid)) {
-        abilbotz.sendMessage(anu.jid, "Halo!.. saya Envyme saya akan membatu mempermudah kehidupan..seperti membuat sticker dan lain-lain. untuk memulai silahkan ketik !menu.", "conversation")
+        abilbotz.sendMessage(anu.jid, "Halo!.. saya Envyme saya akan membatu mempermudah kehidupan..seperti membuat sticker dan lain-lain. untuk memulai silahkan ketik .menu.", "conversation")
       }
       if (!isWelkom) return
       if (anu.action == "add" && !mem.includes(abilbotz.user.jid)) {
