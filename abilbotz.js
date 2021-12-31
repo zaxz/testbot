@@ -471,6 +471,7 @@ Saya ${botname} Yang Siap Membantu Anda Dalam Kinerja Whatsapp 😉
 │ 🌸 ${prefix}tiktok ( Link )
 │ 🌸 ${prefix}ytmp4 ( Link )
 │ 🌸 ${prefix}ytmp3 ( Link )
+│ 🌸 ${prefix}ig ( Link )
 └⬣
 
 ╭─⬣「 Gabut Menu 」⬣
@@ -1075,34 +1076,6 @@ fs.unlinkSync(ran)
 break
 
 
-///━━━━━━━━━━━━━━━[ FITUR YNTKTS BY ABIL BOTZ ]━━━━━━━━━━━━━━━━━//
-case 'tqto':
-but = [
-{ buttonId: `${prefix}abilbotz`, buttonText: { displayText: 'ABILBOTZ' }, type: 1 },
-{ buttonId: `${prefix}abilbotz`, buttonText: { displayText: 'ZEROYT7' }, type: 1 },
-{ buttonId: `${prefix}officialgroup`, buttonText: { displayText: 'OFFICIAL GROUP' }, type: 1 }
-]
-sendButton(from, "Hai Kak 👋 Berikut Nama² Creator Pada Bot Ini", faketeks, but, mek)
-break
-
-case 'officialgroup':
-but = [
-{ buttonId: `${prefix}owner`, buttonText: { displayText: 'OWNER' }, type: 1 },
-]
-sendButton(from, "Nih Ngab Official Group Nya\nhttps://bit.ly/3bMnkNc\nRamaikan Ngab :V", faketeks, but, mek)
-break
-
-case 'gcjb1':
-reply (`Hai Kak ${pushname}\nhttps://chat.whatsapp.com/EWt77quk8nZFEJOk1xZyv4\nJangan Lupa Join`)
-break
-
-case 'gcjb2':
-reply (`Hai Kak ${pushname}\nhttps://chat.whatsapp.com/HVtIIqMexY54NYRQMWB57b\nJangan Lupa Join`)
-break
-
-case 'gcjb3':
-reply (`Hai Kak ${pushname}\nhttps://chat.whatsapp.com/Eab4xRf7rvz6cFVUXl95yo\nJangan Lupa Join`)
-break
 
 case 'runtime':
 abilbotz.sendMessage(from, `*Hai Kak ${pushname}*
@@ -1177,12 +1150,6 @@ contextInfo: { mentionedJid: [nomor] },
 }
 abilbotz.sendMessage(`6282293295376@s.whatsapp.net`, options, text, { quoted: ftrol })
 reply('Masalah Telah Di Laporkan Ke Owner BOT, Mohon Tunggu Untuk Proses Perbaikan')
-break
-case 'youtube':
-but = [
-          { buttonId: `${prefix}owner`, buttonText: { displayText: '👤 OWNER' }, type: 1 }
-        ]
-        sendButton(from, "Nih Ngab Jangan Lupa Subscribe Yoo\nhttps://bit.ly/3nEyhWk\nJoin Official Group\nhttps://bit.ly/3bMnkNc", faketeks, but, {qouted: ftrol})
 break
 
 //━━━━━━━━━━━━━━━[ TIKTOK ]━━━━━━━━━━━━━━━━━//
@@ -1281,6 +1248,23 @@ case 'play':
                             }
                             break
 
+case 'ig':
+        if (!q) return reply('Linknya?')
+        if (!isUrl(args[0]) && !args[0].includes('instagram.com')) return reply(mess.Iv)
+        reply(mess.wait)
+	    hx.igdl(args[0])
+	    .then(async(result) => {
+            for(let i of result.medias){
+                if(i.url.includes('mp4')){
+                    let link = await getBuffer(i.url)
+                    abilbotz.sendMessage(from,link,video,{quoted: mek,caption: `nih bre`})
+                } else {
+                    let link = await getBuffer(i.url)
+                    abilbotz.sendMessage(from,link,image,{quoted: mek,caption: `nih bre`})                  
+                }
+            }
+            });
+	    break
 
 // SC ORI + CREATOR BASE JANGAN DI HPUS TOD
 //HARGAI CREATOR
