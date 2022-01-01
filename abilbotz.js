@@ -848,7 +848,7 @@ break
 case 'hobby':
 case 'hobi':
 case 'hoby':
-const kan =['Coli','baca manga hentai','ngeliat org mandi','Nonton bokep','sepedaan','belajar','ngegay','Main discord','menabung','maling']
+const kan =['Coli','baca manga hentai','ngeliat org mandi','Nonton bokep','sepedaan','Turu','belajar','ngegay','menabung','maling']
 const hooo = kan[Math.floor(Math.random() * kan.length)]
 abilbotz.sendMessage(from, 'Pertanyaan : *hoby*\n\nJawaban : '+ hooo, text, { quoted: ftrol })
 break
