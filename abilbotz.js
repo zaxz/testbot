@@ -1221,7 +1221,7 @@ reply(mess.wait)
 res = await ggs({'query' : `${teks}`})
 kant = ``
 for (let i of res) {
-kant += `*Judul* : ${i.title}
+kant += `\n*Judul* : ${i.title}
 *Link* : ${i.link}
 *Keterangan* : ${i.snippet}`
 }
