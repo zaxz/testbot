@@ -1223,7 +1223,7 @@ kant = ``
 for (let i of res) {
 kant += `\n*Judul* : ${i.title}
 *Link* : ${i.link}
-*Keterangan* : ${i.snippet}`
+*Keterangan* : ${i.snippet}\n`
 }
 var akhir = kant.trim()
 reply(akhir)
