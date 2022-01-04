@@ -468,15 +468,17 @@ Saya ${botname} Yang Siap Membantu Anda Dalam Kinerja Whatsapp 😉
 │ 🌸 ${prefix}sticker ( Reply Image )
 └⬣
 
-╭─⬣「 Download Menu 」⬣
+╭─⬣「 Usefull Menu 」⬣
 │ 🌸 ${prefix}tiktok ( Link )
 │ 🌸 ${prefix}ytmp4 ( Link )
 │ 🌸 ${prefix}ytmp3 ( Link )
 │ 🌸 ${prefix}ig ( Link )
+│ 🌸 ${prefix}google ( Pertanyaan )
 └⬣
 
 ╭─⬣「 Gabut Menu 」⬣
 │ 🌸 ${prefix}desah
+│ 🌸 ${prefix}limbaddesah
 │ 🌸 ${prefix}farmingpahala
 │ 🌸 ${prefix}suit ( Kertas/Batu/Gunting )
 │ 🌸 ${prefix}apakah ( Pertanyaan )
@@ -924,6 +926,10 @@ reply (`Hai Kak ${pushname}, bacalah Istighfar dimanapun dan kapanpun\n\n*Astagh
 break
 
 //━━━━━━━━━━━━━━━[ SOUND MENU BY ABIL BOTZ ]━━━━━━━━━━━━━━━━━//
+case 'limbaddesah':
+sound = fs.readFileSync('Audio/limbaddesah.mp3')
+abilbotz.sendMessage(from, sound, MessageType.audio, {quoted: ftrol, mimetype: 'audio/mp4', ptt:true})
+break
 case 'desah':
 sound = fs.readFileSync('Audio/desah.mp3')
 abilbotz.sendMessage(from, sound, MessageType.audio, {quoted: ftrol, mimetype: 'audio/mp4', ptt:true})
