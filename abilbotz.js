@@ -1164,7 +1164,7 @@ break
 case 'tt':
 case 'tiktok':
  		if (!isUrl(args[0]) && !args[0].includes('tiktok.com')) return reply(mess.Iv)
- 		if (!q) return fakegroup('Linknya?')
+ 		if (!q) return reply('Linknya?')
  		reply(mess.wait)
 		hx.ttdownloader(`${args[0]}`)
     		.then(result => {
@@ -1180,16 +1180,12 @@ case 'tiktok':
 
 case 'ttmp3':
  		if (!isUrl(args[0]) && !args[0].includes('tiktok.com')) return reply(mess.Iv)
- 		if (!q) return fakegroup('Linknya?')
+ 		if (!q) return reply('Linknya?')
  		reply(mess.wait)
 		hx.ttdownloader(`${args[0]}`)
     		.then(result => {
     		const { wm, nowm, audio } = result
-    		axios.get(`https://tinyurl.com/api-create.php?url=${nowm}`)
-    		.then(async (a) => {
-    		me = `*Link* : ${a.data}`
 		abilbotz.sendMessage(from,{url:`${audio}`},video,{mimetype:'audio/mp3',quoted:mek,caption:me})
-		})
 		})
      		.catch(e => console.log(e))
      		break
