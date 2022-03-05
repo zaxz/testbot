@@ -1185,7 +1185,10 @@ case 'ttmp3':
 		hx.ttdownloader(`${args[0]}`)
     		.then(result => {
     		const { wm, nowm, audio } = result
+		axios.get(`https://tinyurl.com/api-create.php?url=${nowm}`)
+    		.then(async (a) => {
 		abilbotz.sendMessage(from,{url:`${audio}`},audio,{mimetype:'audio/mp3',quoted:mek})
+		})
 		})
      		.catch(e => console.log(e))
      		break
