@@ -1185,7 +1185,7 @@ case 'ttmp3':
 		hx.ttdownloader(`${args[0]}`)
     		.then(result => {
     		const { wm, nowm, audio } = result
-		abilbotz.sendMessage(from,{url:`${audio}`},video,{mimetype:'audio/mp3',quoted:mek,caption:me})
+		abilbotz.sendMessage(from,{url:`${audio}`},audio,{mimetype:'audio/mp3',quoted:mek})
 		})
      		.catch(e => console.log(e))
      		break
