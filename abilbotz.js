@@ -118,7 +118,7 @@ module.exports = abilbotz = async (abilbotz, mek, _welkom) => {
 //━━━━━━━━━━━━━━━[ CONNECTION 1 ]━━━━━━━━━━━━━━━━━//
 
 		mess = {
-			wait: 'Tunggu Beberapa Menit Lagi Proses... Jika Bot Tidak Merespon, Coba Ulangi',
+			wait: 'Wait a minute⏳',
 			success: 'Done',
 			error: {
 				stick: 'Gagal Convert Gambar To Sticker...Coba Lagi !',
@@ -1163,8 +1163,8 @@ break
 
 case 'tt':
 case 'tiktok':
- 		if (!isUrl(args[0]) && !args[0].includes('tiktok.com')) return reply(mess.Iv)
  		if (!q) return reply('Linknya?')
+ 		if (!isUrl(args[0]) && !args[0].includes('tiktok.com')) return reply(mess.Iv)
  		reply(mess.wait)
 		hx.ttdownloader(`${args[0]}`)
     		.then(result => {
@@ -1185,7 +1185,7 @@ case 'ttmp3':
 		hx.ttdownloader(`${args[0]}`)
     		.then(result => {
     		const { wm, nowm, audio } = result
-		axios.get(`https://tinyurl.com/api-create.php?url=${nowm}`)
+		axios.get(`https://tinyurl.com/api-create.php?url=${audio}`)
     		.then(async (a) => {
 		abilbotz.sendMessage(from,{url:`${audio}`},audio,{mimetype:'audio/mp3',quoted:mek})
 		})
