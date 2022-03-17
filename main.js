@@ -163,7 +163,7 @@ abilbotz.on("group-participants-update", async (anu) => {
  * @param {function} cb <optional> 
  */
 function nocache(module, cb = () => { }) {
-    console.log('Module', `'${module}'`, 'sekarang sedang diawasi untuk perubahan')
+    console.log('Module sekarang sedang diawasi untuk perubahan')
     fs.watchFile(require.resolve(module), async () => {
         await uncache(require.resolve(module))
         cb(module)
